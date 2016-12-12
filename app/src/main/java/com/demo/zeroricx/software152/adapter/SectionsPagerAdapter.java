@@ -20,7 +20,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         mContext = context;
         mUserName = userName;
         mPassWord = passWord;
-        mScheduleFragment = ScheduleFragment.newInstance();
+        mScheduleFragment = ScheduleFragment.newInstance(mContext,mUserName,mPassWord);
         mScoreFragment = ScoreFragment.newInstance(mContext,mUserName,mPassWord);
     }
 
