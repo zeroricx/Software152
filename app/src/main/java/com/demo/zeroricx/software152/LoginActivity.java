@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("username", mUser);
                     editor.putString("password", mPwd);
                     editor.apply();
-                    LoginActivity.this.finish();
                 } else {
                     Snackbar.make(mLogin, "请输入学号跟密码!", Snackbar.LENGTH_SHORT).show();
                 }
@@ -67,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         intent.putExtra("username", mUser);
         intent.putExtra("password", mPwd);
         startActivity(intent);
+        LoginActivity.this.finish();
     }
 }
 

@@ -84,12 +84,14 @@ public class ScheduleFragment extends Fragment {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+                mValues.clear();
                 if (mDocument != null) {
                     Elements elements = mDocument.select("section.container").select("tr");
                     for (Element element : elements) {
                         ScheduleBean temp = new ScheduleBean();
+                        // 解析一周中同一时间的课程
                         for (int i = 0; i < element.select("td").size(); i++) {
+
                             temp.addData(i, element.select("td").get(i).text());
                         }
                         if (temp.getTime().equals("课程代码"))
